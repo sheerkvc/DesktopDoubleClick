@@ -1,0 +1,16 @@
+#pragma once
+#define IDD_SETTINGS 200
+#define IDC_ENABLED 201
+#define IDC_AUTOSTART 202
+#define IDC_RESTORE 203
+#define IDC_NOTIFY 204
+#define IDC_STARTSETTINGS 205
+#define IDC_LIMITMEM 206
+#define IDC_SPEED 207
+#define IDC_ADMINSTATE 208
+#define IDC_ADMIN 209
+#define IDC_MEMORY 210
+#define IDC_REFRESH 211
+#define IDC_DEFAULTS 212
+#define IDC_FOLDER 213
+#define IDC_STATUS 214

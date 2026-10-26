@@ -1,0 +1,59 @@
+#pragma code_page(65001)
+#include <windows.h>
+#include "resource.h"
+1 ICON "app.ico"
+1 24 "app.manifest"
+1 VERSIONINFO
+FILEVERSION 2,0,0,0
+PRODUCTVERSION 2,0,0,0
+FILEFLAGSMASK 0x3fL
+FILEFLAGS 0x0L
+FILEOS 0x40004L
+FILETYPE 0x1L
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904B0"
+    BEGIN
+      VALUE "FileDescription", "Desktop icon double-click toggle\0"
+      VALUE "FileVersion", "2.0.0\0"
+      VALUE "ProductName", "DesktopDoubleClick\0"
+      VALUE "OriginalFilename", "DesktopDoubleClick.exe\0"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x0409, 1200
+  END
+END
+
+IDD_SETTINGS DIALOGEX 0, 0, 410, 350
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "桌面双击隐藏 · 设置"
+FONT 9, "Microsoft YaHei UI"
+BEGIN
+    LTEXT "双击桌面空白处，切换图标显示", -1, 14, 12, 380, 14
+    GROUPBOX "基本设置", -1, 10, 32, 390, 112
+    CONTROL "启用桌面双击功能", IDC_ENABLED, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 22, 48, 170, 14
+    CONTROL "登录 Windows 后自动启动", IDC_AUTOSTART, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 205, 48, 180, 14
+    CONTROL "退出程序时恢复显示图标", IDC_RESTORE, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 22, 70, 180, 14
+    CONTROL "启动时显示托盘提示", IDC_NOTIFY, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 205, 70, 180, 14
+    CONTROL "手动启动时打开设置窗口", IDC_STARTSETTINGS, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 22, 92, 180, 14
+    LTEXT "双击速度：", -1, 22, 119, 67, 12
+    COMBOBOX IDC_SPEED, 91, 115, 185, 110, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX "内存", -1, 10, 151, 390, 85
+    CONTROL "限制驻留内存至 5 MiB（默认开启）", IDC_LIMITMEM, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 22, 166, 280, 14
+    LTEXT "仅限制物理驻留页；提交内存可能更大，严格限制可能影响响应。", -1, 22, 184, 365, 13
+    LTEXT "", IDC_MEMORY, 22, 202, 277, 26
+    PUSHBUTTON "刷新读数", IDC_REFRESH, 309, 205, 78, 18
+    GROUPBOX "运行权限", -1, 10, 243, 390, 57
+    LTEXT "", IDC_ADMINSTATE, 22, 257, 207, 12
+    PUSHBUTTON "以管理员身份重启…", IDC_ADMIN, 242, 255, 145, 20
+    LTEXT "普通权限即可使用；开机自启使用普通权限。", -1, 22, 278, 365, 13
+    LTEXT "", IDC_STATUS, 14, 304, 382, 12
+    PUSHBUTTON "恢复默认", IDC_DEFAULTS, 12, 324, 73, 19
+    PUSHBUTTON "程序目录", IDC_FOLDER, 91, 324, 73, 19
+    DEFPUSHBUTTON "保存", IDOK, 241, 324, 73, 19
+    PUSHBUTTON "关闭", IDCANCEL, 320, 324, 78, 19
+END
